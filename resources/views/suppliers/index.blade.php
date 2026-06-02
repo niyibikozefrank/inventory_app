@@ -39,16 +39,6 @@
 
                 <div class="supplier-stats">
                     <div class="stat-box">
-                        <h4>{{ $supplier->city }}</h4>
-                        <p>Location</p>
-                    </div>
-
-                    <div class="stat-box">
-                        <h4>{{ $supplier->phone ?? '—' }}</h4>
-                        <p>Phone</p>
-                    </div>
-
-                    <div class="stat-box">
                         <h4>Active</h4>
                         <p>Status</p>
                     </div>
@@ -56,7 +46,6 @@
 
                 <div class="supplier-body">
                     <div class="supplier-meta">
-                        <div><strong>Phone:</strong> <span id="phone-{{ $supplier->id }}">{{ $supplier->phone ?? '—' }}</span> <button class="btn btn-outline" data-copy="#phone-{{ $supplier->id }}" title="Copy phone">Copy</button></div>
                     </div>
                 </div>
 
