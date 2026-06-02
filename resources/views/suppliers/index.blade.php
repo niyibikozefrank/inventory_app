@@ -28,23 +28,7 @@
             @forelse($suppliers as $supplier)
             <div class="supplier-card">
                 <div class="supplier-header">
-                    <div class="supplier-photo" role="button" title="Click to preview"
-                         @php
-                             $photo = $supplier->photo ?? null;
-                             $avatar = $photo ? asset('storage/' . $photo) : 'https://ui-avatars.com/api/?name=' . urlencode($supplier->name) . '&background=667eea&color=fff&size=256';
-                         @endphp
-                         data-photo="{{ $avatar }}">
-                        <div class="avatar-placeholder" aria-hidden="true">
-                            <div class="avatar-shimmer"></div>
-                        </div>
-                        @if($photo)
-                            <img data-src="{{ asset('storage/' . $photo) }}" alt="{{ $supplier->name }}" class="supplier-avatar-img supplier-photo-img" loading="lazy" />
-                        @else
-                            <img data-src="https://ui-avatars.com/api/?name={{ urlencode($supplier->name) }}&background=667eea&color=fff&size=256" alt="{{ $supplier->name }}" class="supplier-avatar-img supplier-photo-img" loading="lazy" />
-                        @endif
-                    </div>
-
-                    <div class="supplier-info">
+                    <div class="supplier-info" style="width:100%;">
                         <h3>{{ $supplier->name }}</h3>
                         <span style="background:#fff;color:#667eea;padding:6px 14px;border-radius:25px;font-size:12px;font-weight:bold;display:inline-block;margin-top:8px;">
                             ID #{{ $supplier->id }}
