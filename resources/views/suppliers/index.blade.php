@@ -2,24 +2,24 @@
 
 @section('title', 'Suppliers')
 @section('content')
-<div class="card">
-    <div class="card-header" style="display:flex; justify-content:space-between; align-items:center;">
-        <h2><i class="fas fa-people-carry"></i> Suppliers Management</h2>
-        <a href="{{ route('suppliers.create') }}" class="btn btn-primary">
-            <i class="fas fa-plus"></i> Add Supplier
-        </a>
+<div class="card supplier-panel">
+    <div class="card-header supplier-panel-header">
+        <div class="supplier-panel-title">
+            <h2><i class="fas fa-people-carry"></i> Suppliers</h2>
+            <p class="muted">Manage suppliers, contact details and quick actions</p>
+        </div>
+        <div class="supplier-panel-actions">
+            <div class="supplier-search">
+                <input id="supplier-search" type="search" placeholder="Search suppliers by name, city, email..." aria-label="Search suppliers" />
+            </div>
+            <a href="{{ route('suppliers.create') }}" class="btn btn-primary">
+                <i class="fas fa-plus"></i> New Supplier
+            </a>
+        </div>
     </div>
 
-    <div class="supplier-controls">
-        <div class="supplier-search">
-            <input id="supplier-search" type="search" placeholder="Search suppliers by name, city, email..." />
-        </div>
-        <div>
-            <a href="{{ route('suppliers.create') }}" class="btn btn-outline">New Supplier</a>
-        </div>
-    </div>
-
-    <div class="supplier-grid">
+    <div class="card-body supplier-panel-body">
+        <div class="supplier-grid">
         @forelse($suppliers as $supplier)
         <div class="supplier-card">
             <div class="supplier-avatar" role="button" title="Click to preview"
@@ -67,12 +67,17 @@
         @endforelse
     </div>
 
-    <div class="pagination" style="margin-top:18px;">
-        {{ $suppliers->links() }}
+        <div class="card-footer supplier-panel-footer" style="margin-top:18px; display:flex; justify-content:center;">
+            <div class="pagination">
+                {{ $suppliers->links() }}
+            </div>
+        </div>
+
+        <!-- Photo preview modal is injected by suppliers.js -->
     </div>
 
-    <div id="infinite-scroll-sentinel"></div>
-
-    <!-- Photo preview modal is injected by suppliers.js -->
 </div>
+
+<div id="infinite-scroll-sentinel"></div>
+
 @endsection

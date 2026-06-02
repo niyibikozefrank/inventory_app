@@ -685,6 +685,14 @@ h4 {
     padding-bottom: 16px;
 }
 
+.supplier-panel { padding: 0; overflow: visible; }
+.supplier-panel-header { padding: 20px 24px; display:flex; justify-content:space-between; align-items:center; gap:16px; }
+.supplier-panel-title h2 { margin:0; font-size:1.25rem; }
+.supplier-panel-title .muted { color:#6b7280; font-size:13px; margin-top:4px; }
+.supplier-panel-actions { display:flex; gap:12px; align-items:center; }
+.supplier-panel-body { padding:18px 20px 12px; }
+.supplier-panel-footer { padding:12px 20px; border-top: 1px solid var(--light); background: transparent; }
+
 .card-header h2 {
     color: var(--dark);
     font-size: 1.5rem;
