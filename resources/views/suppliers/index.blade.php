@@ -37,18 +37,6 @@
                     </div>
                 </div>
 
-                <div class="supplier-stats">
-                    <div class="stat-box">
-                        <h4>Active</h4>
-                        <p>Status</p>
-                    </div>
-                </div>
-
-                <div class="supplier-body">
-                    <div class="supplier-meta">
-                    </div>
-                </div>
-
                 <div class="supplier-actions">
                     <a href="{{ route('suppliers.show',$supplier) }}" class="crud-btn view-btn">
                         <i class="fas fa-eye"></i>
