@@ -60,11 +60,6 @@
                         Update
                     </a>
 
-                    <a href="{{ route('suppliers.create') }}" class="crud-btn create-btn">
-                        <i class="fas fa-plus"></i>
-                        Create
-                    </a>
-
                     <form action="{{ route('suppliers.destroy',$supplier) }}" method="POST" style="flex:1;">
                         @csrf
                         @method('DELETE')
