@@ -11,6 +11,7 @@ const Suppliers = {
         Suppliers.revealCards();
         Suppliers.lazyLoadImages();
         Suppliers.bindInfiniteScroll();
+        Suppliers.ensureImageRadius();
     },
 
     bindCopyButtons: () => {
@@ -126,6 +127,12 @@ const Suppliers = {
         }, { rootMargin: '200px' });
 
         document.querySelectorAll('img.supplier-avatar-img').forEach(img => io.observe(img));
+    },
+
+    ensureImageRadius: () => {
+        document.querySelectorAll('img.supplier-avatar-img').forEach(img => {
+            img.style.borderRadius = '10px';
+        });
     },
 
     bindInfiniteScroll: () => {
