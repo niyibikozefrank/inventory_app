@@ -39,27 +39,24 @@
 
                 <div class="supplier-stats">
                     <div class="stat-box">
-                        <h4>{{ $supplier->id }}</h4>
-                        <p>Supplier ID</p>
+                        <h4>{{ $supplier->city }}</h4>
+                        <p>Location</p>
                     </div>
 
                     <div class="stat-box">
-                        <h4>{{ $supplier->created_at->format('d M') }}</h4>
-                        <p>Created</p>
+                        <h4>{{ $supplier->phone ?? '—' }}</h4>
+                        <p>Phone</p>
                     </div>
 
                     <div class="stat-box">
-                        <h4>{{ $supplier->updated_at->format('d M') }}</h4>
-                        <p>Updated</p>
+                        <h4>Active</h4>
+                        <p>Status</p>
                     </div>
                 </div>
 
                 <div class="supplier-body">
                     <div class="supplier-meta">
-                        <div><strong>Contact:</strong> {{ $supplier->contact_person ?? '—' }}</div>
                         <div><strong>Phone:</strong> <span id="phone-{{ $supplier->id }}">{{ $supplier->phone ?? '—' }}</span> <button class="btn btn-outline" data-copy="#phone-{{ $supplier->id }}" title="Copy phone">Copy</button></div>
-                        <div><strong>Email:</strong> <span id="email-{{ $supplier->id }}">{{ $supplier->email ?? '—' }}</span> <button class="btn btn-outline" data-copy="#email-{{ $supplier->id }}" title="Copy email">Copy</button></div>
-                        <div><strong>Address:</strong> {{ $supplier->address ?? '—' }}</div>
                     </div>
                 </div>
 
