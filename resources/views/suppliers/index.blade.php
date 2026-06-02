@@ -37,6 +37,12 @@
                     </div>
                 </div>
 
+                <ul class="supplier-detail-list">
+                    <li><strong>Contact Person:</strong> {{ $supplier->contact_person ?? 'N/A' }}</li>
+                    <li><strong>Phone:</strong> {{ $supplier->phone ?? 'N/A' }}</li>
+                    <li><strong>Email:</strong> {{ $supplier->email ?? 'N/A' }}</li>
+                </ul>
+
                 <div class="supplier-actions">
                     <a href="{{ route('suppliers.show',$supplier) }}" class="crud-btn view-btn">
                         <i class="fas fa-eye"></i>
@@ -48,11 +54,11 @@
                         Update
                     </a>
 
-                    <form action="{{ route('suppliers.destroy',$supplier) }}" method="POST" style="flex:1;">
+                    <form action="{{ route('suppliers.destroy',$supplier) }}" method="POST">
                         @csrf
                         @method('DELETE')
 
-                        <button type="submit" class="crud-btn delete-btn" style="width:100%;" onclick="return confirm('Delete this supplier?')">
+                        <button type="submit" class="crud-btn delete-btn" onclick="return confirm('Delete this supplier?')">
                             <i class="fas fa-trash"></i>
                             Delete
                         </button>

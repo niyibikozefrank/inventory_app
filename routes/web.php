@@ -19,6 +19,11 @@ Route::middleware(['auth', 'verified'])->group(function () {
     // Dashboard
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
 
+    // Static pages
+    Route::view('/about', 'pages.about')->name('about');
+    Route::view('/address', 'pages.address')->name('address');
+    Route::view('/privacy-policy', 'pages.privacy')->name('privacy.policy');
+
     // Profile
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');

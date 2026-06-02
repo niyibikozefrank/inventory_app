@@ -1,5 +1,10 @@
 <footer class="footer" style="background: linear-gradient(135deg, #f9f9f9 0%, #f3f4f6 100%); padding: 30px 20px; text-align: center; color: #666; border-top: 2px solid var(--border); margin-top: 60px;">
     <div style="max-width: 1200px; margin: 0 auto;">
+        <div style="display: flex; justify-content: center; flex-wrap: wrap; gap: 16px; margin-bottom: 18px;">
+            <a href="{{ route('about') }}" style="color: #4f46e5; text-decoration: none; font-weight: 600;">About Us</a>
+            <a href="{{ route('address') }}" style="color: #4f46e5; text-decoration: none; font-weight: 600;">Address</a>
+            <a href="{{ route('privacy.policy') }}" style="color: #4f46e5; text-decoration: none; font-weight: 600;">Privacy & Policy</a>
+        </div>
         <p style="margin-bottom: 10px; font-weight: 600;">
             &copy; {{ date('Y') }} <span style="color: var(--primary); font-weight: 700;">Inventory Management System</span>
         </p>

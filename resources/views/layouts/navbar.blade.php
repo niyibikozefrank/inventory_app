@@ -15,35 +15,5 @@
                 </button>
             </form>
         </div>
-
-        <!-- User Dropdown Menu -->
-        <div class="dropdown">
-            <div class="user-info">
-                @if(Auth::check())
-                    <img src="https://ui-avatars.com/api/?name={{ urlencode(Auth::user()->name) }}&background=667eea&color=fff" 
-                         alt="User Avatar" title="{{ Auth::user()->name }}">
-                    <span>{{ Auth::user()->name }}</span>
-                @else
-                    <img src="https://ui-avatars.com/api/?name=Guest&background=667eea&color=fff" 
-                         alt="User Avatar" title="Guest">
-                    <span>Guest</span>
-                @endif
-                <i class="fas fa-chevron-down"></i>
-            </div>
-
-            <!-- Dropdown Menu Content -->
-            <div class="dropdown-content">
-                <a href="{{ route('profile.edit') }}">
-                    <i class="fas fa-user-circle"></i>
-                    <span>My Profile</span>
-                </a>
-                @if(Auth::check() && Auth::user()->role === 'admin')
-                    <a href="{{ route('users.index') }}">
-                        <i class="fas fa-users"></i>
-                        <span>Manage Users</span>
-                    </a>
-                @endif
-            </div>
-        </div>
     </div>
 </div>

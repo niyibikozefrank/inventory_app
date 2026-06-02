@@ -73,11 +73,5 @@
                 <i class="fas fa-users"></i> Users
             </a>
         </div>
-
-        <div class="nav-item">
-            <a href="{{ route('profile.edit') }}">
-                <i class="fas fa-user-circle"></i> Profile
-            </a>
-        </div>
     </nav>
 </div>
