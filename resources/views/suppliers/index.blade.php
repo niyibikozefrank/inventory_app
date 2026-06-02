@@ -7,6 +7,9 @@
         <div class="supplier-panel-title">
             <h2><i class="fas fa-people-carry"></i> Suppliers</h2>
             <p class="muted">Manage suppliers, contact details and quick actions</p>
+            <div class="supplier-panel-meta">
+                <span class="supplier-count">{{ $suppliers->total() }} suppliers</span>
+            </div>
         </div>
         <div class="supplier-panel-actions">
             <div class="supplier-search">
@@ -67,17 +70,16 @@
         @endforelse
     </div>
 
-        <div class="card-footer supplier-panel-footer" style="margin-top:18px; display:flex; justify-content:center;">
+        <div class="card-footer supplier-panel-footer" style="margin-top:18px; display:flex; flex-direction:column; align-items:center; gap:10px;">
             <div class="pagination">
                 {{ $suppliers->links() }}
             </div>
+            <div id="infinite-scroll-sentinel" role="status" aria-hidden="true"></div>
         </div>
 
         <!-- Photo preview modal is injected by suppliers.js -->
     </div>
 
 </div>
-
-<div id="infinite-scroll-sentinel"></div>
 
 @endsection
